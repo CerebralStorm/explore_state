@@ -1,0 +1,43 @@
+<h2>Show lead</h2>
+
+<ul>
+
+  <li>
+    <strong>Parcel number:</strong>
+    <%= @lead.parcel_number %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @lead.address %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @lead.city %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @lead.state %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @lead.status %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @lead.price %>
+  </li>
+
+  <li>
+    <strong>Value:</strong>
+    <%= @lead.value %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: lead_path(@conn, :edit, @lead) %>
+<%= link "Back", to: lead_path(@conn, :index) %>

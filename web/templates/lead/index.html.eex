@@ -1,0 +1,38 @@
+<h2>Listing leads</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Parcel number</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Status</th>
+      <th>Price</th>
+      <th>Value</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for lead <- @leads do %>
+    <tr>
+      <td><%= lead.parcel_number %></td>
+      <td><%= lead.address %></td>
+      <td><%= lead.city %></td>
+      <td><%= lead.state %></td>
+      <td><%= lead.status %></td>
+      <td><%= lead.price %></td>
+      <td><%= lead.value %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: lead_path(@conn, :show, lead), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: lead_path(@conn, :edit, lead), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: lead_path(@conn, :delete, lead), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New lead", to: lead_path(@conn, :new) %>

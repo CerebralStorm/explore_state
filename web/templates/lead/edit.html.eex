@@ -1,0 +1,6 @@
+<h2>Edit lead</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: lead_path(@conn, :update, @lead) %>
+
+<%= link "Back", to: lead_path(@conn, :index) %>

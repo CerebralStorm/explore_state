@@ -1,0 +1,6 @@
+<h2>New lead</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: lead_path(@conn, :create) %>
+
+<%= link "Back", to: lead_path(@conn, :index) %>
